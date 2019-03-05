@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 
     <!-- jQuery -->
@@ -17,9 +19,26 @@
 
     <title>GifTastic</title>
 </head>
-<body>
-    <div id="lotrButtons"></div>
 
-    <div id="lotrGifs" style="border: 1px solid rebeccapurple"></div>
+<body>
+    <!-- Buttons to show user -->
+    <div id="lotrButtons" style="width:70%"></div>
+
+    <!-- Form to give users the ability to add more buttons -->
+    <div class="row">
+        <div class="col-md-4">
+            <form>
+                <div class="form-group">
+                    <label for="addSearch">Enter another image button</label>
+                    <input type="text" class="form-control" id="addSearch">
+                    <button type="submit" class="btn btn-success" id="btnAddSearchTerm">Add Search Term</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Images to show when the user clicks a button -->
+    <div id="lotrGifs" style="width:70%"></div>
 </body>
+
 </html>
