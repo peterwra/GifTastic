@@ -10,35 +10,62 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-
     <!-- jQuery -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
+    <!-- jQuery UI -->
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
     <!-- External Script File -->
     <script src="assets/javascript/app.js"></script>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/icon" href="assets/images/favicon.ico" />
 
     <title>GifTastic</title>
 </head>
 
 <body>
-    <!-- Buttons to show user -->
-    <div id="lotrButtons" style="width:70%"></div>
 
-    <!-- Form to give users the ability to add more buttons -->
-    <div class="row">
-        <div class="col-md-4">
-            <form>
-                <div class="form-group">
-                    <label for="addSearch">Enter another image button</label>
-                    <input type="text" class="form-control" id="addSearch">
-                    <button type="submit" class="btn btn-success" id="btnAddSearchTerm">Add Search Term</button>
+    <div id="centerDiv" style="background-color: #f5f5f5; margin: auto; width: 70%;">
+        <div class="row">
+            <!-- Buttons to show user -->
+            <div class="col-md-4">
+                <div id="lotrButtons"></div>
+            </div>
+            <!-- Allow the user to toggle between adding new images or starting over -->
+            <div class="col-md-2">
+                <div class="container border border-success" style="overflow:auto">
+                    <h2>Image Control</h2>
+                    <p>When a button is clicked...</p>
+                    <div class="radio">
+                        <label><input type="radio" name="keepimage" value="delete" checked>Delete Existing
+                            Images</label>
+                    </div>
+                    <div class="radio">
+                        <label><input type="radio" name="keepimage" value="keep">Keep Existing Images</label>
+                    </div>
                 </div>
-            </form>
+            </div>
         </div>
+
+        <!-- Form to give users the ability to add more buttons -->
+        <div class="row">
+            <div class="col-md-4">
+                <form>
+                    <div class="form-group">
+                        <label for="addSearch">Enter another image button</label>
+                        <input type="text" class="form-control" id="addSearch">
+                        <button type="submit" class="btn btn-success" id="btnAddSearchTerm">Add Search Term</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Images to show when the user clicks a button -->
+        <div id="lotrGifs" class="ui-sortable"></div>
     </div>
 
-    <!-- Images to show when the user clicks a button -->
-    <div id="lotrGifs" style="width:70%"></div>
 </body>
 
 </html>
