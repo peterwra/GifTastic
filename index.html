@@ -26,8 +26,20 @@
 </head>
 
 <body>
-
+    <!-- Center everything on the page -->
     <div id="centerDiv" style="background-color: #f5f5f5; margin: auto; width: 70%;">
+
+        <!-- Jumbotron to describe page -->
+        <div class="jumbotron">
+            <h1 class="display-4">Lord of the Rings Images Page!</h1>
+            <p class="lead">
+                Search for images on giphy.com using the buttons. Use the form to add additional searches.
+                Click an image to toggle between a still image and an animated version.
+            </p>
+            <hr class="my-4">
+            <p>You can click-drag the various images to put them in an order of your choosing!</p>
+        </div>
+
         <div class="row">
             <!-- Buttons to show user -->
             <div class="col-md-4">
@@ -44,6 +56,22 @@
                     </div>
                     <div class="radio">
                         <label><input type="radio" name="keepimage" value="keep">Keep Existing Images</label>
+                    </div>
+                </div>
+            </div>
+            <!-- What is the highest image rating to get -->
+            <div class="col-md-2">
+                <div class="container border border-success" style="overflow:auto">
+                    <h2>Image Rating</h2>
+                    <p>The highest image rating to get</p>
+                    <div class="radio">
+                        <label><input type="radio" name="imagerating" value="PG-13" checked>PG-13</label>
+                    </div>
+                    <div class="radio">
+                        <label><input type="radio" name="imagerating" value="PG">PG</label>
+                    </div>
+                    <div class="radio">
+                        <label><input type="radio" name="imagerating" value="G">G</label>
                     </div>
                 </div>
             </div>

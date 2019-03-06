@@ -2,9 +2,10 @@
 var topics = ["Aragorn", "Legolas", "Gimli", "Boromir", "Gollum", "Sauron", "Galadriel", "Elrond",
     "Gandalf", "Arwen"];
 
-// API key and URL
+// Offset, Rating and API key
+var imageOffset = 0;
+var imageRating = "PG-13";
 var apiKey = "KpPJw3jjPKVEEgE4GW45YvUaL6kvYMPf";
-var queryUrl = "https://api.giphy.com/v1/gifs/search?api_key=" + apiKey + "&limit=10&offset=0&rating=PG-13&lang=en&q="
 
 function generateButtons() {
     $("#lotrButtons").empty();
@@ -48,17 +49,28 @@ $(document).on("click", ".btn-search", function () {
 
     // Is the user deleting existing images or keeping?
     var userDeleteImageOption = $("input[name='keepimage']:checked").val();
-    console.log(userDeleteImageOption);
+    console.log("User image delete option: " + userDeleteImageOption);
     if (userDeleteImageOption === "delete") {
         $("#lotrGifs").empty();
     }
 
-    var tmpUrl = queryUrl + $(this).text();
-    console.log(tmpUrl);
+    // What rating do we use from the user?
+    var userImageRating = $("input[name='imagerating']:checked").val();
+	console.log("Rating: ", userImageRating)
+    
+
+    // Get a random offset
+    imageOffset = Math.floor(Math.random() * 100);
+
+    // Build URL
+    var queryUrl = "https://api.giphy.com/v1/gifs/search?api_key=" + apiKey 
+        + "&limit=10&offset=" + imageOffset + "&rating=" + userImageRating + "&lang=en&q=" + $(this).text();
+
+    console.log(queryUrl);
 
     // Ajax
     $.ajax({
-        url: tmpUrl,
+        url: queryUrl,
         method: "GET"
     }).then(function (response) {
         var obj = response.data;
