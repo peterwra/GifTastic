@@ -19,25 +19,34 @@
     <!-- External Script File -->
     <script src="assets/javascript/app.js"></script>
 
+    <!-- CSS File -->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/icon" href="assets/images/favicon.ico" />
+    <link rel="icon" type="image/icon" href="assets/images/favicon.ico" />
 
     <title>GifTastic</title>
 </head>
 
 <body>
     <!-- Center everything on the page -->
-    <div id="centerDiv" style="background-color: #f5f5f5; margin: auto; width: 70%;">
+    <div id="centerDiv">
 
         <!-- Jumbotron to describe page -->
         <div class="jumbotron">
             <h1 class="display-4">Lord of the Rings Images Page!</h1>
             <p class="lead">
-                Search for images on giphy.com using the buttons. Use the form to add additional searches.
-                Click an image to toggle between a still image and an animated version.
+                Search for images on giphy.com using the buttons.
             </p>
             <hr class="my-4">
-            <p>You can click-drag the various images to put them in an order of your choosing!</p>
+            <p>Use the text box to add additional searches. Click an image to toggle between a still image and an animated version.
+                You can click-drag the various images to put them in an order of your choosing!
+                <ul>
+                    <li><strong>Image Control:</strong>&nbsp;Controls whether the existing images are cleared when a button is pressed.</li>
+                    <li><strong>Image Rating:</strong>&nbsp;Limit the image rating of images. Options are PG-13, PG and G.</li>
+                    <li><strong>Images to Retrieve:</strong>&nbsp;Use this to control the number of images retrieved with each button press.</li>
+                </ul>
+            </p>
         </div>
 
         <div class="row">
@@ -47,7 +56,7 @@
             </div>
             <!-- Allow the user to toggle between adding new images or starting over -->
             <div class="col-md-2">
-                <div class="container border border-success" style="overflow:auto">
+                <div id="userImageControl" class="container border border-success">
                     <h2>Image Control</h2>
                     <p>When a button is clicked...</p>
                     <div class="radio">
@@ -61,7 +70,7 @@
             </div>
             <!-- What is the highest image rating to get -->
             <div class="col-md-2">
-                <div class="container border border-success" style="overflow:auto">
+                <div id="userImageRating" class="container border border-success">
                     <h2>Image Rating</h2>
                     <p>The highest image rating to get</p>
                     <div class="radio">
@@ -73,6 +82,24 @@
                     <div class="radio">
                         <label><input type="radio" name="imagerating" value="G">G</label>
                     </div>
+                </div>
+            </div>
+            <!-- How many images to get from the API -->
+            <div class="col-md-2">
+                <div id="userReturnImages" class="container border border-success">
+                    <label for="userNumImages"><h2>Images to Retrieve</h2></label>
+                    <select class="form-control" id="userNumImages">
+                        <option>10</option>
+                        <option>9</option>
+                        <option>8</option>
+                        <option>7</option>
+                        <option>6</option>
+                        <option>5</option>
+                        <option>4</option>
+                        <option>3</option>
+                        <option>2</option>
+                        <option>1</option>
+                    </select>
                 </div>
             </div>
         </div>

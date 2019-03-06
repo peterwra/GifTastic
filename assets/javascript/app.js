@@ -56,15 +56,18 @@ $(document).on("click", ".btn-search", function () {
 
     // What rating do we use from the user?
     var userImageRating = $("input[name='imagerating']:checked").val();
-	console.log("Rating: ", userImageRating)
+    console.log("Rating: ", userImageRating)
     
+    // How many images to get?
+    var userNumImages = $("#userNumImages option:selected").text();
 
     // Get a random offset
     imageOffset = Math.floor(Math.random() * 100);
 
     // Build URL
     var queryUrl = "https://api.giphy.com/v1/gifs/search?api_key=" + apiKey 
-        + "&limit=10&offset=" + imageOffset + "&rating=" + userImageRating + "&lang=en&q=" + $(this).text();
+        + "&limit=" + userNumImages + "&offset=" + imageOffset + "&rating=" + userImageRating 
+        + "&lang=en&q=" + $(this).text();
 
     console.log(queryUrl);
 
