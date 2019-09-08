@@ -2,13 +2,29 @@ body {
     background-image: url("../images/background.jpg");
 }
 
+h1 {
+    font-family: 'Metamorphous', cursive;
+    text-shadow: 5px 5px lightgray;
+}
+
 #centerDiv {
     background-color: #f5f5f5; 
     margin: auto; 
     width: 70%;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 #userImageControl,
 #userImageRating {
     overflow: auto;
+}
+
+#userNumImages {
+    width: 75px;
+}
+
+.btn-search {
+    background-color: #807a4c;
+    border-color: #706b43;
 }

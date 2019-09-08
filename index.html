@@ -22,6 +22,9 @@
     <!-- CSS File -->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
+    <!-- LotR Font -->
+    <link href="https://fonts.googleapis.com/css?family=Metamorphous&display=swap" rel="stylesheet">
+
     <!-- Favicon -->
     <link rel="icon" type="image/icon" href="assets/images/favicon.ico" />
 
@@ -34,30 +37,30 @@
 
         <!-- Jumbotron to describe page -->
         <div class="jumbotron">
-            <h1 class="display-4">Lord of the Rings Images Page!</h1>
+            <h1 class="display-4"><strong>Lord of the Rings Animated Gif Search!</strong></h1>
             <p class="lead">
                 Search for images on giphy.com using the buttons.
             </p>
             <hr class="my-4">
-            <p>Use the text box to add additional searches. Click an image to toggle between a still image and an animated version.
+            <p>Use the text box to add additional searches. Click an image to toggle between a still image and an
+                animated version.
                 You can click-drag the various images to put them in an order of your choosing!
                 <ul>
-                    <li><strong>Image Control:</strong>&nbsp;Controls whether the existing images are cleared when a button is pressed.</li>
-                    <li><strong>Image Rating:</strong>&nbsp;Limit the image rating of images. Options are PG-13, PG and G.</li>
-                    <li><strong>Images to Retrieve:</strong>&nbsp;Use this to control the number of images retrieved with each button press.</li>
+                    <li><strong>Image Control:</strong>&nbsp;Controls whether the existing images are cleared when a
+                        button is pressed.</li>
+                    <li><strong>Image Rating:</strong>&nbsp;Limit the image rating of images. Options are PG-13, PG and
+                        G.</li>
+                    <li><strong>Images to Retrieve:</strong>&nbsp;Use this to control the number of images retrieved
+                        with each button press.</li>
                 </ul>
             </p>
         </div>
 
         <div class="row">
-            <!-- Buttons to show user -->
-            <div class="col-md-4">
-                <div id="lotrButtons"></div>
-            </div>
             <!-- Allow the user to toggle between adding new images or starting over -->
-            <div class="col-md-2">
-                <div id="userImageControl" class="container border border-success">
-                    <h2>Image Control</h2>
+            <div class="col-md-4">
+                <div id="userImageControl" class="container border border-secondary">
+                    <h2>Image&nbsp;Control</h2>
                     <p>When a button is clicked...</p>
                     <div class="radio">
                         <label><input type="radio" name="keepimage" value="delete" checked>Delete Existing
@@ -69,9 +72,9 @@
                 </div>
             </div>
             <!-- What is the highest image rating to get -->
-            <div class="col-md-2">
-                <div id="userImageRating" class="container border border-success">
-                    <h2>Image Rating</h2>
+            <div class="col-md-4">
+                <div id="userImageRating" class="container border border-secondary">
+                    <h2>Image&nbsp;Rating</h2>
                     <p>The highest image rating to get</p>
                     <div class="radio">
                         <label><input type="radio" name="imagerating" value="PG-13" checked>PG-13</label>
@@ -85,9 +88,11 @@
                 </div>
             </div>
             <!-- How many images to get from the API -->
-            <div class="col-md-2">
-                <div id="userReturnImages" class="container border border-success">
-                    <label for="userNumImages"><h2>Images to Retrieve</h2></label>
+            <div class="col-md-4">
+                <div id="userReturnImages" class="container border border-secondary">
+                    <label for="userNumImages">
+                        <h2>Images&nbsp;to&nbsp;Retrieve</h2>
+                    </label>
                     <select class="form-control" id="userNumImages">
                         <option>10</option>
                         <option>9</option>
@@ -102,6 +107,15 @@
                     </select>
                 </div>
             </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-2"></div>
+            <!-- Buttons to show user -->
+            <div class="col-md-8">
+                <div id="lotrButtons"></div>
+            </div>
+            <div class="col-md-2"></div>
         </div>
 
         <!-- Form to give users the ability to add more buttons -->

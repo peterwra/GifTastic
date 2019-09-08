@@ -14,7 +14,7 @@ function generateButtons() {
         var btn = $("<button>");
         btn.attr("id", "btn" + i);
         btn.attr("type", "button");
-        btn.addClass("btn btn-primary btn-search");
+        btn.addClass("btn btn-secondary btn-search");
         btn.text(topics[i]);
         btn.css("margin", "10px");
         btn.appendTo("#lotrButtons");
